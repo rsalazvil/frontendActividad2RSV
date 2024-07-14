@@ -1,6 +1,6 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount, useReadContract, useWriteContract } from "wagmi";
-import { abi } from "./assets/abis/CFETokenAbi";
+import { abi } from "./assets/abis/erc721";
 import { CFE_CONTRACT_ADDRESS } from "./constants";
 import { useState } from "react";
 import { waitForTransactionReceipt } from "wagmi/actions";
