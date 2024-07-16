@@ -2,6 +2,7 @@ import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { useAccount, useReadContract, useWriteContract } from 'wagmi'
 import { abi } from './assets/abis/erc721'
 import { CFE_CONTRACT_ADDRESS } from './constants'
+import {WALLET_ADDRESS} from './constants'
 import { useState } from 'react'
 import { waitForTransactionReceipt } from 'wagmi/actions'
 import { config } from './main'
@@ -26,9 +27,9 @@ function App(): JSX.Element {
     try {
       const txHash = await writeContractAsync({
         abi,
-        address: CFE_CONTRACT_ADDRESS,
+        address: WALLET_ADDRESS,
         functionName: 'mint',
-        args: [address, 100],
+        args: [address, 1],
       });
 
       await waitForTransactionReceipt(config, {
